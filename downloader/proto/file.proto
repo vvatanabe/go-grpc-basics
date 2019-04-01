@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package file;
+
+message FileRequest {
+    string name = 1;
+}
+
+message FileResponse {
+    bytes data = 1;
+}
+
+service FileService {
+    rpc Download (FileRequest)
+        returns (stream FileResponse);
+}

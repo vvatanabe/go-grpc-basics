@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package chat;
+
+message Post {
+    string name = 1;
+    string message = 2;
+}
+
+service ChatService {
+    rpc Connect (stream Post)
+        returns (stream Post);
+}
