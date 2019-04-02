@@ -1,12 +1,23 @@
-# echo server using unary RPC
+# 単項RPC ── 1リクエスト／1レスポンス
+
+単項RPCを使用した、クライアントからの入力をそのまま返却するEchoサーバの例です。
+
+## .protoファイルをコンパイルする
 
 ```
-# build .proto
 $ protoc -I ./echo/proto --go_out=plugins=grpc:./echo/proto/ ./echo/proto/echo.proto
+```
 
-# run server
+## gRPCサーバを起動する
+
+```
 $ go run ./echo/server
+```
 
-# run client
+## gRPCクライアントプログラムを実行する
+
+引数に適当な文言を与えて実行します。
+
+```
 $ go run ./echo/client hello
 ```

@@ -1,12 +1,23 @@
-# file downloader using server-side streaming RPC
+# サーバサイドストリーミングRPC ── 1リクエスト／多レスポンス
+
+サーバサイドストリーミングRPCを使用した、ファイルのダウンロード機能の例です。
+
+## .protoファイルをコンパイルする
 
 ```
-# build .proto
 $ protoc -I ./downloader/proto --go_out=plugins=grpc:./downloader/proto/ ./downloader/proto/file.proto
+```
 
-# run server
+## gRPCサーバを起動する
+
+```
 $ go run ./downloader/server
+```
 
-# run client
+## gRPCクライアントプログラムを実行する
+
+引数にダウンロードするファイル名を与えて実行します。
+
+```
 $ go run ./downloader/client $FILE_NAME
 ```

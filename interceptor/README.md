@@ -1,12 +1,23 @@
-# echo server using interceptor
+# gRPCのインタセプタ
+
+インタセプタを使用した例です。
+
+## .protoファイルをコンパイルする
 
 ```
-# build .proto
 $ protoc -I ./interceptor/proto --go_out=plugins=grpc:./interceptor/proto/ ./interceptor/proto/echo.proto
+```
 
-# run server
+## gRPCサーバを起動する
+
+```
 $ go run ./interceptor/server
+```
 
-# run client
+## gRPCクライアントプログラムを実行する
+
+引数に適当な文言を与えて実行します。
+
+```
 $ go run ./interceptor/client hello
 ```
