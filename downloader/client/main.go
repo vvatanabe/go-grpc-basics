@@ -33,7 +33,7 @@ func main() {
 	stream, err := c.Download(ctx, &pb.FileRequest{
 		Name: name})
 	if err != nil {
-		log.Fatalf("could not downlaod: %s\n", err)
+		log.Fatalf("could not download: %s\n", err)
 	}
 	var blob []byte
 	for {
